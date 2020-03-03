@@ -1,0 +1,229 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  width: 200px;
+  .view {
+    padding: 15px;
+    text-align: center;
+    .top {
+      display: flex;
+      justify-content: space-around;
+      width: 140px;
+      margin: auto;
+      span {
+        font-size: 25px;
+        margin: auto 0;
+      }
+    }
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 30px;
+        font-size: 24px;
+        text-align: right;
+      }
+      input:disabled {
+        background-color: #ececec;
+      }
+      div {
+        width: 36px;
+        height: 22px;
+        display: inline;
+        font-size: 20px;
+        background: #e1fdff;
+        box-shadow: 0px 0px 2px 1px #b3b3b3;
+      }
+      div.disabled {
+        background: #ececec;
+        cursor: default;
+      }
+      cursor: pointer;
+    }
+    .program {
+      padding: 0 10px;
+      list-style: none;
+      li {
+        padding: 10px;
+        border: 1px solid gray;
+        margin: 10px 0px;
+        display: flex;
+        font-size: 20px;
+        position: relative;
+        cursor: move;
+      }
+      li.disabled {
+        cursor: default;
+      }
+    }
+    .btn-layout {
+      padding: 5px 20px;
+      border-radius: 10px;
+      background: #ececec;
+      box-shadow: 0px 0px 2px 1px #b3b3b3;
+      font-size: 16px;
+      width: 90px;
+      margin: 10px auto auto auto;
+      transition-duration: 200ms;
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .btn-layout.filled {
+      background: #e1fdff;
+      cursor: pointer;
+    }
+
+    .controller {
+      display: none;
+    }
+
+    .controller.is-show {
+      display: block;
+    }
+
+    .repeat-area {
+      padding: 5px 10px;
+      width: 100px;
+      height: 30px;
+      margin: 5px auto;
+      display: flex;
+      justify-content: space-around;
+      img {
+        height: 24px;
+        margin: 3px;
+      }
+      input {
+        width: 30px;
+        font-size: 24px;
+        text-align: right;
+      }
+      span {
+        font-size: 24px;
+        color: #4c4c4c;
+      }
+    }
+
+    .button-area {
+      display: flex;
+      justify-content: space-around;
+      .button {
+        padding: 10px;
+        width: 25px;
+        background: #e1fdff;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 5px;
+        box-shadow: 0px 0px 3px 0px #aaaaaa;
+        cursor: pointer;
+        img {
+          width: 15px;
+        }
+      }
+      .button.disabled {
+        cursor: default;
+        background: #ececec;
+      }
+    }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
+
+.close.icon {
+  color: #ff2325;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+  width: 21px;
+  height: 21px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close.icon.disabled {
+  display: none;
+}
+
+.close.icon:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.close.icon:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.check.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 3px;
+  margin-top: 4px;
+  width: 14px;
+  height: 8px;
+  border-bottom: solid 1px currentColor;
+  border-left: solid 1px currentColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+.checkbox-input{
+  display: none;
+}
+.checkbox-parts{
+  padding-left: 30px;
+  position: relative;
+}
+.checkbox-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+.checkbox-input:checked + .checkbox-parts{
+  color: #d01137;
+}
+.checkbox-input:checked + .checkbox-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #d01137;
+  border-right: 3px solid #d01137;
+}
+.checkbox-input:disabled + .checkbox-parts::before {
+  background: #ececec;
+}

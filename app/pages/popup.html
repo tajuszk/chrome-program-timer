@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Popup</title>
+  <link rel="stylesheet" type="text/css" href="../styles/popup.css">
+</head>
+<body>
+  <div class="view">
+    <!-- 時間記入 -->
+    <div class="insert">
+      <div class="top">
+        <div class="input-field">
+          <div class="up">▲</div>
+          <input type="number" id="hour" min="0" placeholder="00">
+          <div class="down">▼</div>
+        </div>
+        <span>:</span>
+        <div class="input-field">
+          <div class="up">▲</div>
+          <input type="number" id="minute" min="0" placeholder="00" autofocus>
+          <div class="down">▼</div>
+        </div>
+        <span>:</span>
+        <div class="input-field">
+          <div class="up">▲</div>
+          <input type="number" id="second" min="0" placeholder="00">
+          <div class="down">▼</div>
+        </div>
+      </div>
+      <div id="setBtn" class="btn-layout"><img src="../images/arrow.png"></div>
+    </div>
+
+    <!-- プログラムタイマー -->
+    <div>
+      <ul id="items" class="program"></ul>
+    </div>
+
+    <div class="controller">
+      <!-- リピート可否 -->
+      <div class="repeat-area">
+        <label>
+          <input type="checkbox" class="checkbox-input" id="repeat">
+          <span class="checkbox-parts"><img src="../images/repeat.png"></span>
+        </label>
+      </div>
+
+      <!-- 各種ボタン -->
+      <div class="button-area">
+        <div id="startBtn" class="button"><img src="../images/play.png"></div>
+        <div id="stopBtn" class="button"><img src="../images/pause.png"></div>
+        <div id="resetBtn" class="button"><img src="../images/reset.png"></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="../scripts/popup.js"></script>
+</body>
+</html>
