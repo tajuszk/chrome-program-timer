@@ -1,18 +1,11 @@
 {
   "appName": {
-    "message": "プログラムタイマー",
-    "description": "The name of the application"
-  },
-  "appShortName": {
-    "message": "プログラムタイマー",
-    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+    "message": "インターバルタイマー"
   },
   "appDescription": {
-    "message": "プログラムタイマー",
-    "description": "The description of the application"
+    "message": "インターバル設定が出来るタイマーです"
   },
   "browserActionTitle": {
-    "message": "プログラムタイマー",
-    "description": "The title of the browser action button"
+    "message": "開く"
   }
 }

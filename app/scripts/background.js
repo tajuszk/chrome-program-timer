@@ -1,4 +1,4 @@
-const EXTENSION_ID = 'ifcfkjdeceggmcmninbenmppimnlmbfd'
+const EXTENSION_ID = 'ggofbbndaeneibofhcakocmknlcoleaa'
 let programList = []
 let isRepeat = false
 let isPlay = false
@@ -92,6 +92,7 @@ function updateTimer () {
   }
 
   chrome.runtime.sendMessage(EXTENSION_ID, updateParam)
+  // chrome.runtime.sendMessage(updateParam)
 
   if (currentRap.currentHour === 0 &&
     currentRap.currentMinute === 0 &&
@@ -211,6 +212,7 @@ function updateView () {
     isPlay: isPlay
   }
   chrome.runtime.sendMessage(EXTENSION_ID, param)
+  // chrome.runtime.sendMessage(param)
 }
 
 // 0埋め処理
