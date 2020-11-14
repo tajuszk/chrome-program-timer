@@ -2,6 +2,9 @@
   "appName": {
     "message": "インターバルタイマー"
   },
+  "appShortName": {
+    "message": "インターバルタイマー"
+  },
   "appDescription": {
     "message": "インターバル設定が出来るタイマーです"
   },

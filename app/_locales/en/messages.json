@@ -2,6 +2,9 @@
   "appName": {
     "message": "Interval Timer"
   },
+  "appShortName": {
+    "message": "インターバルタイマー"
+  },
   "appDescription": {
     "message": "It is a timer that can set the interval."
   },
