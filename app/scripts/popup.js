@@ -86,6 +86,15 @@ function initController () {
     }
     chrome.runtime.sendMessage(EXTENSION_ID, param)
   })
+
+  // Soundボタン
+  $('#sound').on('change', function (e) {
+    let param = {
+      type: 'sound',
+      isSound: e.currentTarget.checked
+    }
+    chrome.runtime.sendMessage(EXTENSION_ID, param)
+  })
 }
 
 /**
@@ -94,6 +103,7 @@ function initController () {
 function updateView (responseData) {
   let programList = responseData.programList
   $('#repeat').prop('checked', responseData.isRepeat)
+  $('#sound').prop('checked', responseData.isSound)
 
   $('#items').empty()
   if (programList.length === 0) {
@@ -137,6 +147,7 @@ function updateView (responseData) {
     sortableList.option('disabled', true)
 
     $('#repeat').prop('disabled', true)
+    $('#sound').prop('disabled', true)
     $('#startBtn').addClass('disabled')
     $('#stopBtn').removeClass('disabled')
     $('#resetBtn').addClass('disabled')
@@ -153,6 +164,7 @@ function updateView (responseData) {
     sortableList.option('disabled', false)
 
     $('#repeat').prop('disabled', false)
+    $('#sound').prop('disabled', false)
     $('#stopBtn').addClass('disabled')
 
     $('.up').on('click', (e) => up(e))

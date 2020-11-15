@@ -85,6 +85,10 @@ body {
       display: block;
     }
 
+    .config-area {
+      display: flex;
+    }
+    .sound-area,
     .repeat-area {
       padding: 5px 10px;
       width: 100px;

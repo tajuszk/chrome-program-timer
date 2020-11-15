@@ -1,6 +1,7 @@
 const EXTENSION_ID = 'ggofbbndaeneibofhcakocmknlcoleaa'
 let programList = []
 let isRepeat = false
+let isSound = false
 let isPlay = false
 let timer = null
 
@@ -45,6 +46,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       break
     case 'repeat':
       isRepeat = request.isRepeat
+      break
+    case 'sound':
+      isSound = request.isSound
       break
     case 'start':
       startTimer()
@@ -112,7 +116,9 @@ function updateTimer () {
       priority: 0
     })
     // アラームを鳴らす
-    play()
+    if (isSound) {
+      play()
+    }
     // タイマーを止める
     if (currentRap.currentProgram === programList.length - 1) {
       if (isRepeat) {
@@ -208,6 +214,7 @@ function updateView () {
     type: 'updateView',
     programList: programList,
     isRepeat: isRepeat,
+    isSound: isSound,
     isPlay: isPlay
   }
   chrome.runtime.sendMessage(EXTENSION_ID, param)
