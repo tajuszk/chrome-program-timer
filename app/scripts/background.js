@@ -94,13 +94,14 @@ function updateTimer () {
   chrome.runtime.sendMessage(EXTENSION_ID, updateParam)
   // chrome.runtime.sendMessage(updateParam)
 
-  if (currentRap.currentHour === 0 &&
-    currentRap.currentMinute === 0 &&
-    currentRap.currentSecond === 0) {
+  // 0秒になったか
+  const isZero = currentRap.currentHour === 0 && currentRap.currentMinute === 0 && currentRap.currentSecond === 0
+  if (isZero) {
     let message = 'Finished : ' + currentRap.currentDefaultTime + '\n'
     if (currentRap.nextDefaultTime) {
       message += 'Next : ' + currentRap.nextDefaultTime
     }
+    // ポップアップを表示する
     chrome.notifications.create({
       type: 'basic',
       iconUrl: '../images/icon-32.png',
@@ -110,17 +111,15 @@ function updateTimer () {
       silent: true,
       priority: 0
     })
-  }
-
-  // タイマーを止める
-  if (currentRap.currentHour === 0 &&
-    currentRap.currentMinute === 0 &&
-    currentRap.currentSecond === 0 &&
-    currentRap.currentProgram === programList.length - 1) {
-    if (isRepeat) {
-      resetTimer()
-    } else {
-      stopTimer()
+    // アラームを鳴らす
+    play()
+    // タイマーを止める
+    if (currentRap.currentProgram === programList.length - 1) {
+      if (isRepeat) {
+        resetTimer()
+      } else {
+        stopTimer()
+      }
     }
   }
 }
@@ -218,4 +217,23 @@ function updateView () {
 // 0埋め処理
 function zeroPadding (num) {
   return ('0' + num).slice(-2)
+}
+
+// 音声再生
+function play () {
+  const element = document.createElement('audio')
+  const source = element.appendChild(document.createElement('source'))
+  source.setAttribute('src', '../sounds/default.mp3')
+  element.appendChild(source)
+  document.body.appendChild(element)
+  element.play()
+    .then(function (result) {
+
+    })
+    .catch(function (exception) {
+
+    })
+    .finally(function (result) {
+
+    })
 }

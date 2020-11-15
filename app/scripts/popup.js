@@ -237,7 +237,6 @@ function down (e) {
   }
   input.val(value)
   insertCheck()
-  new Sound()
 }
 
 // 0埋め処理
