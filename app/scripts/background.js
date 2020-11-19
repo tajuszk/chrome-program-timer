@@ -226,14 +226,18 @@ function zeroPadding (num) {
   return ('0' + num).slice(-2)
 }
 
+// audio要素作成
+const audio = document.createElement('audio')
+// 音声ファイルを登録
+const source = audio.appendChild(document.createElement('source'))
+source.setAttribute('src', '../sounds/default.mp3')
+audio.appendChild(source)
+document.body.appendChild(audio)
+
 // 音声再生
 function play () {
-  const element = document.createElement('audio')
-  const source = element.appendChild(document.createElement('source'))
-  source.setAttribute('src', '../sounds/default.mp3')
-  element.appendChild(source)
-  document.body.appendChild(element)
-  element.play()
+  // 音声再生
+  audio.play()
     .then(function (result) {
 
     })
