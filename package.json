@@ -60,7 +60,7 @@
   "dependencies": {
     "jquery": "^3.5.0",
     "moment": "^2.24.0",
-    "npm": "^6.14.4",
+    "npm": "^9.4.1",
     "pretty-checkbox": "^3.0.3",
     "sortablejs": "^1.10.2"
   }
